@@ -49,16 +49,13 @@ def urltest(url):
 def vultest(url):
     try:
         response = requests.post(url, data=data, headers=headers, verify=False , timeout=3)
+        parsed_url = urlsplit(url)
+        url=parsed_url.scheme+"://"+parsed_url.netloc
         # 检查响应头的状态码是否为200
-        if response.status_code == 200 and ("MinioEnv" in response.text):
-            parsed_url = urlsplit(url)
-            url=parsed_url.scheme+"://"+parsed_url.netloc
+        if response.status_code == 200 and ("MinioEnv" in response.text): 
             vulurl.append(url)
-            print(url+"  [+]漏洞存在！！！")
-            
+            print(url+"  [+]漏洞存在！！！") 
         else:
-            parsed_url = urlsplit(url)
-            url=parsed_url.scheme+"://"+parsed_url.netloc
             print(url+"  [-]漏洞不存在。")
     except RequestException:
         parsed_url = urlsplit(url)

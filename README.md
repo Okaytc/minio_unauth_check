@@ -19,8 +19,10 @@ CVE-2023-28432,minio未授权访问检测工具
 
 演示截图：
 单个检测：
+
 ![图片](https://user-images.githubusercontent.com/50813688/227416302-6c498159-a2be-4946-a975-52cea7559cb4.png)
 
 
 批量检测:
+
 ![图片](https://user-images.githubusercontent.com/50813688/227415978-9ae1f3fe-5570-470e-8855-5f23eaee0364.png)
